@@ -64,6 +64,16 @@ extension EntriesTableViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
+        if editingStyle == .delete {
+            let entry = EntryController.shared.entries[indexPath.row]
+            let database = CloudKitController.shared.privateDB
+            
+            EntryController.shared.delete(entry: entry) { (success) in
+                if success {
+                    print("delete was successful")
+                }
+            }
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 }

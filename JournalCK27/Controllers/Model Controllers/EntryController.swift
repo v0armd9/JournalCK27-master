@@ -28,12 +28,14 @@ class EntryController {
         let record = CKRecord(entry: newEntry)
         let database = CloudKitController.shared.privateDB
         
-        CloudKitController.shared.save(record: record, database: database) { (success) in
-            if success {
-                self.entries.append(newEntry)
+        CloudKitController.shared.save(record: record, database: database) { (record) in
+            guard let record = record,
+            let entry = Entry(record: record)
+                else {return}
+            self.entries.append(entry)
             }
         }
-    }
+    
     
     // Read
     func fetchEntries(completion: @escaping (Bool) -> Void) {

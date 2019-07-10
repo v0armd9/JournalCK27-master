@@ -13,7 +13,7 @@ struct Constants {
     static let typeKey = "User"
     fileprivate static let usernameKey = "Username"
     fileprivate static let emailKey = "Email"
-    fileprivate static let appleUserReferenceKey = "AppleUserReference"
+    fileprivate static let appleUserReferenceKey = "appleUserReference"
 }
 
 class User {

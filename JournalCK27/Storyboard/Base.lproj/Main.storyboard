@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ssO-8D-ZvF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PNp-HD-XeX">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -137,10 +137,62 @@
             </objects>
             <point key="canvasLocation" x="1832" y="138"/>
         </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="ynm-F2-Xny">
+            <objects>
+                <viewController id="PNp-HD-XeX" customClass="SignInViewController" customModule="JournalCK27" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PFN-tO-9qp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oqe-bB-c6l">
+                                <rect key="frame" x="52" y="419" width="310.5" height="68"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q1q-WO-Nkq">
+                                        <rect key="frame" x="0.0" y="0.0" width="310.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcY-rJ-qII">
+                                        <rect key="frame" x="0.0" y="38" width="310.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQN-9g-yj0">
+                                <rect key="frame" x="184" y="527" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="signInButtonTapped:" destination="PNp-HD-XeX" eventType="touchUpInside" id="kgN-Ns-rhS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vQN-9g-yj0" firstAttribute="top" secondItem="oqe-bB-c6l" secondAttribute="bottom" constant="40" id="7xz-kZ-pd3"/>
+                            <constraint firstItem="oqe-bB-c6l" firstAttribute="centerY" secondItem="r1m-Du-PQS" secondAttribute="centerY" id="86S-aW-Hos"/>
+                            <constraint firstItem="vQN-9g-yj0" firstAttribute="centerX" secondItem="r1m-Du-PQS" secondAttribute="centerX" id="ZX6-TM-Dvv"/>
+                            <constraint firstItem="oqe-bB-c6l" firstAttribute="centerX" secondItem="r1m-Du-PQS" secondAttribute="centerX" id="dgq-Yt-Xwr"/>
+                            <constraint firstItem="oqe-bB-c6l" firstAttribute="width" secondItem="PFN-tO-9qp" secondAttribute="width" multiplier="0.75" id="p11-yN-IMx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r1m-Du-PQS"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="dcY-rJ-qII" id="Oyl-i9-Xxt"/>
+                        <outlet property="usernameTextField" destination="Q1q-WO-Nkq" id="8tR-Si-HrF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZ9-FL-HeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="283" y="-533"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="GXi-ie-EGk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ssO-8D-ZvF" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="EntryNavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="ssO-8D-ZvF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fIt-Vo-Am1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
